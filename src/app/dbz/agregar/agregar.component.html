@@ -1,0 +1,27 @@
+<h3>
+  Agregar <small>{{ nuevo.nombre }}</small>
+</h3>
+<hr />
+
+<!-- Para evitar el f5 automático -->
+<form (ngSubmit)="agregar()">
+  <!-- [] propiedad, () evento -->
+  <!-- <input type="text" placeholder="Nombre" [value]="nuevo.nombre" (input)="cambiarNobre( $event )"/> -->
+  <!-- Inicio Two Way Data Binding -->
+  <input
+    type="text"
+    placeholder="Nombre"
+    name="nombre"
+    [(ngModel)]="nuevo.nombre"
+  />
+
+  <!-- se tiene que agregar el name para que pueda funcionar el ngModel -->
+  <input
+    type="text"
+    placeholder="Poder"
+    name="poder"
+    [(ngModel)]="nuevo.poder"
+  />
+  <!-- Fin Two Way Data Binding -->
+  <button type="submit">Agregar</button>
+</form>
